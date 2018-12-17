@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="cinnamon_tools",
-    version="0.0.3",
+    version="0.1.0",
     author="Caleb Mennen",
     author_email="pip@calebmennen.com",
     description="A small library of personal utils",

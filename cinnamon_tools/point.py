@@ -38,7 +38,7 @@ class Point:
         yield from self.values
 
     def __bool__(self):
-        pass
+        return True
 
     def __lt__(self, other):
         # return self < other
