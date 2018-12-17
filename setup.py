@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="library",
-    version="0.0.1",
+    name="cinnamon_tools",
+    version="0.0.2",
     author="Caleb Mennen",
     author_email="pip@calebmennen.com",
     description="A small library of personal utils",
