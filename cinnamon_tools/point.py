@@ -47,6 +47,10 @@ class Point:
     def zero_point(self):
         return zero_point(self.order)
 
+    @property
+    def adjacent(self):
+        return [self + p for p in [Point(-1, 0), Point(1, 0), Point(0, -1), Point(0, 1)]]
+
 
 def zero_point(order):
     return Point(*([0] * order))
