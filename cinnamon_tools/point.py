@@ -51,6 +51,18 @@ class Point:
     def adjacent(self):
         return [self + p for p in [Point(-1, 0), Point(1, 0), Point(0, -1), Point(0, 1)]]
 
+    @property
+    def x(self):
+        return self.values[0]
+
+    @property
+    def y(self):
+        return self.values[1]
+
+    @property
+    def z(self):
+        return self.values[2]
+
 
 def zero_point(order):
     return Point(*([0] * order))
