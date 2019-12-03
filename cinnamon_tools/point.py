@@ -28,6 +28,12 @@ class Point:
     def __sub__(self, other):
         return Point(*[a - b for a, b in zip(self.values, other.values)])
 
+    def __mul__(self, other):
+        return Point(*map(lambda x: x*other, self))
+
+    def __rmul__(self, other):
+        return self.__mul__(other)
+
     def __eq__(self, other):
         return all(a == b for a, b in zip(self.values, other.values))
 
