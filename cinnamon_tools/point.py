@@ -6,9 +6,9 @@ from numbers import Number
 @total_ordering
 class Point:
     def __init__(self, *args):
-        ints = list(map(lambda v: isinstance(v, Number), args))
-        if not all(ints):
-            raise TypeError("{} is not an integer".format(args[ints.index(False)]))
+        numbers = map(lambda v: isinstance(v, Number), args)
+        if not all(numbers):
+            raise TypeError("{} is not an number".format(args[list(numbers).index(False)]))
         self.values = args
 
     def distance_to(self, other):
