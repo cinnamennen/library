@@ -10,7 +10,6 @@ class Point:
         if not all(ints):
             raise TypeError("{} is not an integer".format(args[ints.index(False)]))
         self.values = args
-        self.order = len(args)
 
     def distance_to(self, other):
         return sum([abs(a - b) for a, b in zip(self.values, other.values)])
@@ -52,8 +51,11 @@ class Point:
         # return self < other
         return all(a < b for a, b in zip(self.values, other.values))
 
+    def __len__(self):
+        return len(self.values)
+
     def zero_point(self):
-        return zero_point(self.order)
+        return zero_point(len(self))
 
     @property
     def adjacent(self):
@@ -93,14 +95,14 @@ class WrappedEnum(Enum):
         return members[index]
 
 
-class Directions(WrappedEnum):
+class Direction(WrappedEnum):
     UP = Point(0, 1)
     RIGHT = Point(1, 0)
     DOWN = Point(0, -1)
     LEFT = Point(-1, 0)
 
 
-class FileDirections(WrappedEnum):
+class FileDirection(WrappedEnum):
     UP = Point(-1, 0)
     RIGHT = Point(0, 1)
     DOWN = Point(1, 0)
