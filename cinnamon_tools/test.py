@@ -21,6 +21,11 @@ class TestPoint(unittest.TestCase):
             with self.subTest(f'length of {size}'):
                 self.assertEqual(size, len(zero_point(size)))
 
+    def test_access(self):
+        p = Point(0, 1, 2, 3)
+        for i in range(len(p)):
+            self.assertEqual(i, p[i])
+
 
 class TestDirection(unittest.TestCase):
     def test_simple_forwards(self):

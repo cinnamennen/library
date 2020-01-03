@@ -54,6 +54,9 @@ class Point:
     def __len__(self):
         return len(self.values)
 
+    def __getitem__(self, item):
+        return self.values[item]
+
     def zero_point(self):
         return zero_point(len(self))
 
